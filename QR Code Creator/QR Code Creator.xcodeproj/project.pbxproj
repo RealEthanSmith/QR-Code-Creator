@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A02F87F420B4EE4C00F7605E /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F87F320B4EE4C00F7605E /* Scanner.swift */; };
 		A0E56AC420B4C861005C11B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E56AC320B4C861005C11B7 /* AppDelegate.swift */; };
 		A0E56AC620B4C861005C11B7 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E56AC520B4C861005C11B7 /* Generator.swift */; };
 		A0E56AC920B4C861005C11B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E56AC720B4C861005C11B7 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A02F87F320B4EE4C00F7605E /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		A0E56AC020B4C860005C11B7 /* QR Code Creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR Code Creator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E56AC320B4C861005C11B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0E56AC520B4C861005C11B7 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				A0E56AC320B4C861005C11B7 /* AppDelegate.swift */,
 				A0E56AC520B4C861005C11B7 /* Generator.swift */,
+				A02F87F320B4EE4C00F7605E /* Scanner.swift */,
 				A0E56AC720B4C861005C11B7 /* Main.storyboard */,
 				A0E56ACA20B4C862005C11B7 /* Assets.xcassets */,
 				A0E56ACC20B4C862005C11B7 /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E56AC620B4C861005C11B7 /* Generator.swift in Sources */,
+				A02F87F420B4EE4C00F7605E /* Scanner.swift in Sources */,
 				A0E56AC420B4C861005C11B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,7 +444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onpointech.QR-Code-Creator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -458,7 +462,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onpointech.QR-Code-Creator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

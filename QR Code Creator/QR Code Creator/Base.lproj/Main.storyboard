@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Ns-tS-hwD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,33 +10,57 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="VlJ-W9-D0k">
+            <objects>
+                <tabBarController id="0Ns-tS-hwD" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a0Q-6q-FtJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kRl-Mg-EzY"/>
+                        <segue destination="yrt-85-xae" kind="relationship" relationship="viewControllers" id="QSn-YZ-50H"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSV-dl-EEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-698" y="118"/>
+        </scene>
+        <!--Generator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QR_Code_Creator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Generator" customModule="QR_Code_Creator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Address Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="niL-ju-RRV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Content Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="niL-ju-RRV">
                                 <rect key="frame" x="16" y="41" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="A2Q-yi-Lqe"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-uc-XEY">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-uc-XEY">
                                 <rect key="frame" x="16" y="79" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="A0g-Qs-QsR"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Barcode"/>
                                     <segment title="QR Code"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7z-Rj-Fel">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7z-Rj-Fel">
                                 <rect key="frame" x="16" y="115" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.3006091118" green="0.66280484200000001" blue="0.97259002920000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AM7-Fn-F6o"/>
+                                </constraints>
                                 <state key="normal" title="Generate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -44,14 +68,35 @@
                                     <action selector="generatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddF-6c-o8c"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jlf-kB-4m1">
-                                <rect key="frame" x="67" y="167" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jlf-kB-4m1">
+                                <rect key="frame" x="67" y="213.5" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="95k-hp-YLm"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="LxG-Cf-jkF"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="YFZ-2N-jn7"/>
+                                    <constraint firstAttribute="height" constant="240" id="yf0-t8-uSV"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Jlf-kB-4m1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="G5T-1E-np3"/>
+                            <constraint firstItem="Jlf-kB-4m1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HHE-pr-d7V"/>
+                            <constraint firstItem="niL-ju-RRV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="Hbb-BK-Biw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xi7-uc-XEY" secondAttribute="trailing" constant="16" id="Hqs-Ek-0fx"/>
+                            <constraint firstItem="Z7z-Rj-Fel" firstAttribute="top" secondItem="Xi7-uc-XEY" secondAttribute="bottom" constant="8" id="Nht-Iy-tgj"/>
+                            <constraint firstItem="Z7z-Rj-Fel" firstAttribute="top" secondItem="Xi7-uc-XEY" secondAttribute="bottom" constant="8" id="Psr-JT-O3o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="niL-ju-RRV" secondAttribute="trailing" constant="16" id="Q90-Fd-fUy"/>
+                            <constraint firstItem="niL-ju-RRV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Upd-K0-X4d"/>
+                            <constraint firstItem="Xi7-uc-XEY" firstAttribute="top" secondItem="niL-ju-RRV" secondAttribute="bottom" constant="8" id="ar3-3f-kyI"/>
+                            <constraint firstItem="Z7z-Rj-Fel" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="w34-z9-3S6"/>
+                            <constraint firstItem="Xi7-uc-XEY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wuh-Mn-0HM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z7z-Rj-Fel" secondAttribute="trailing" constant="16" id="xpn-FQ-BPA"/>
+                            <constraint firstItem="Jlf-kB-4m1" firstAttribute="top" secondItem="Z7z-Rj-Fel" secondAttribute="bottom" constant="68.5" id="zpR-G2-rQc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Generator" image="Generator" landscapeImage="Generator" id="3bA-4i-rrk"/>
                     <connections>
                         <outlet property="CodeSelector" destination="Xi7-uc-XEY" id="5aj-hC-0Zx"/>
                         <outlet property="dataField" destination="niL-ju-RRV" id="1N9-mw-f96"/>
@@ -62,5 +107,42 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
+        <!--Scanner-->
+        <scene sceneID="tR3-TS-slR">
+            <objects>
+                <viewController id="yrt-85-xae" customClass="Scanner" customModule="QR_Code_Creator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zuW-Kl-t46">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cross hair" translatesAutoresizingMaskIntoConstraints="NO" id="QpM-fA-iXi">
+                                <rect key="frame" x="27" y="173" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="4n1-nT-AYY"/>
+                                    <constraint firstAttribute="width" constant="320" id="afG-Xc-rha"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QpM-fA-iXi" firstAttribute="centerX" secondItem="zuW-Kl-t46" secondAttribute="centerX" id="EdL-wk-vBw"/>
+                            <constraint firstItem="QpM-fA-iXi" firstAttribute="centerY" secondItem="zuW-Kl-t46" secondAttribute="centerY" id="vij-z3-NMO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hQJ-yD-DAw"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Scanner" image="Scanner" landscapeImage="Scanner" id="MSY-k0-7mg"/>
+                    <connections>
+                        <outlet property="crosshair" destination="QpM-fA-iXi" id="KGB-x1-Mjx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fyl-Uk-4Ff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="773.60000000000002" y="116.49175412293854"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Cross hair" width="141" height="141"/>
+        <image name="Generator" width="30" height="30"/>
+        <image name="Scanner" width="30" height="30"/>
+    </resources>
 </document>

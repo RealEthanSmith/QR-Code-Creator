@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class Generator: UIViewController {
     
     //MARK: Connect
     @IBOutlet weak var dataField: UITextField!
