@@ -132,26 +132,44 @@
                                 <rect key="frame" x="117" y="80" width="140" height="58"/>
                                 <color key="backgroundColor" red="0.97259002920000004" green="0.30480452279583337" blue="0.18416846001523693" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="9mG-cO-yff" secondAttribute="height" multiplier="70:29" id="6g8-ed-zAe"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="Q7F-hh-HHb"/>
-                                    <constraint firstAttribute="height" constant="58" id="ffw-tJ-0kB"/>
-                                    <constraint firstAttribute="width" constant="140" id="yF3-Pz-PIC"/>
+                                    <constraint firstAttribute="height" constant="58" id="wuv-WT-JYm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="31"/>
                                 <state key="normal" title="SCAN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="scan2:" destination="yrt-85-xae" eventType="touchUpInside" id="AZc-sr-kmy"/>
+                                    <action selector="userscans:" destination="yrt-85-xae" eventType="touchUpInside" id="Z25-Vc-yay"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcQ-lL-tna">
+                                <rect key="frame" x="0.0" y="575" width="375" height="43"/>
+                                <color key="backgroundColor" red="0.97259002920000004" green="0.30480452279999998" blue="0.18416846000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="YDu-a0-ciZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="STOP SCANNING">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="userstops:" destination="yrt-85-xae" eventType="touchUpInside" id="G4g-aI-a8j"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="9mG-cO-yff" firstAttribute="leading" secondItem="hQJ-yD-DAw" secondAttribute="leading" constant="117" id="29E-WH-jSx"/>
                             <constraint firstItem="QpM-fA-iXi" firstAttribute="top" secondItem="9mG-cO-yff" secondAttribute="bottom" constant="35" id="412-wm-QIV"/>
+                            <constraint firstItem="zcQ-lL-tna" firstAttribute="leading" secondItem="hQJ-yD-DAw" secondAttribute="leading" id="4qk-cp-4OM"/>
                             <constraint firstItem="9mG-cO-yff" firstAttribute="leading" secondItem="hQJ-yD-DAw" secondAttribute="leading" constant="117" id="7YX-S9-9DG"/>
                             <constraint firstItem="QpM-fA-iXi" firstAttribute="centerX" secondItem="zuW-Kl-t46" secondAttribute="centerX" id="EdL-wk-vBw"/>
+                            <constraint firstItem="zcQ-lL-tna" firstAttribute="trailing" secondItem="hQJ-yD-DAw" secondAttribute="trailing" id="SR7-Pp-N2n"/>
+                            <constraint firstItem="hQJ-yD-DAw" firstAttribute="trailing" secondItem="9mG-cO-yff" secondAttribute="trailing" constant="118" id="foU-tJ-GhD"/>
+                            <constraint firstItem="9mG-cO-yff" firstAttribute="top" secondItem="hQJ-yD-DAw" secondAttribute="top" constant="60" id="geB-on-qFp"/>
                             <constraint firstItem="9mG-cO-yff" firstAttribute="top" secondItem="hQJ-yD-DAw" secondAttribute="top" constant="60" id="h1v-EJ-HXv"/>
+                            <constraint firstItem="QpM-fA-iXi" firstAttribute="top" secondItem="9mG-cO-yff" secondAttribute="bottom" constant="35" id="iSa-a3-OHk"/>
+                            <constraint firstItem="zcQ-lL-tna" firstAttribute="bottom" secondItem="hQJ-yD-DAw" secondAttribute="bottom" id="juX-f0-Oxm"/>
                             <constraint firstItem="hQJ-yD-DAw" firstAttribute="trailing" secondItem="9mG-cO-yff" secondAttribute="trailing" constant="118" id="ngx-hZ-VZV"/>
                             <constraint firstItem="QpM-fA-iXi" firstAttribute="centerY" secondItem="zuW-Kl-t46" secondAttribute="centerY" id="vij-z3-NMO"/>
                         </constraints>
@@ -161,6 +179,7 @@
                     <connections>
                         <outlet property="crosshair" destination="QpM-fA-iXi" id="KGB-x1-Mjx"/>
                         <outlet property="scan" destination="9mG-cO-yff" id="SAA-xF-29R"/>
+                        <outlet property="stopScan" destination="zcQ-lL-tna" id="3jU-Y6-t6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyl-Uk-4Ff" userLabel="First Responder" sceneMemberID="firstResponder"/>

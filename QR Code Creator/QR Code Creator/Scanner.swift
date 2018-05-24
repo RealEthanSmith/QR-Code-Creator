@@ -13,12 +13,14 @@ class Scanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var crosshair: UIImageView!
     @IBOutlet weak var scan: UIButton!
+    @IBOutlet weak var stopScan: UIButton!
     var video = AVCaptureVideoPreviewLayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        scan.backgroundColor = UIColor.red
+        stopScan.backgroundColor = UIColor.white
         
         //Creating session
         let session = AVCaptureSession()
@@ -48,35 +50,44 @@ class Scanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         view.layer.addSublayer(video)
         
         self.view.bringSubview(toFront: crosshair)
+        self.view.bringSubview(toFront: scan)
+        self.view.bringSubview(toFront: stopScan)
         
         session.startRunning()
         
     }
-    //AVMetadataObject.ObjectType.qr
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        
-        if metadataObjects != nil && metadataObjects.count != 0
-        {
-            if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
-            {
-                if object.type == AVMetadataObject.ObjectType.qr
-                {
-                    let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
-                        UIPasteboard.general.string = object.stringValue
-                    }))
-                    
-                    present(alert, animated: true, completion: nil)
-                }
-            }
-        }
+    var scanningForCode = 0
+    
+    @IBAction func userscans(_ sender: UIButton) {
+        scanningForCode = 1
+        stopScan.backgroundColor = UIColor.red
+    }
+    
+    @IBAction func userstops(_ sender: UIButton) {
+        scanningForCode = 0
+        stopScan.backgroundColor = UIColor.white
     }
     
     
     
-    
+    //AVMetadataObject.ObjectType.qr
+        func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+            if metadataObjects != nil && metadataObjects.count != 0 && scanningForCode == 1{
+                if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
+                    if object.type == AVMetadataObject.ObjectType.qr {
+                        let alert = UIAlertController(title: "Your code is:", message: object.stringValue, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
+                        alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
+                            UIPasteboard.general.string = object.stringValue
+                        }))
+                        present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+
+   
     
     
     
