@@ -24,7 +24,11 @@ class Generator: UIViewController {
     //MARK: Button
     @IBAction func generatePressed(_ sender: UIButton) {
         
-        if let text = dataField.text {
+        if var text = dataField.text {
+            
+            if text == "" {
+                text = "This is an empty code"
+            }
             
             let data = text.data(using: .ascii, allowLossyConversion: false)
             
@@ -41,12 +45,6 @@ class Generator: UIViewController {
             
             
         }
-        
-        
-        
-        
-        
-        
     }
     
     

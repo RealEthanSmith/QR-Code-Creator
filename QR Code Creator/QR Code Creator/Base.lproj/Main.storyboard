@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,14 +37,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Content Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="niL-ju-RRV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Code Content Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="niL-ju-RRV">
                                 <rect key="frame" x="16" y="41" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="A2Q-yi-Lqe"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-uc-XEY">
                                 <rect key="frame" x="16" y="79" width="343" height="29"/>
@@ -61,6 +62,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AM7-Fn-F6o"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                 <state key="normal" title="Generate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -74,6 +76,7 @@
                                     <constraint firstAttribute="width" constant="240" id="95k-hp-YLm"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="LxG-Cf-jkF"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="YFZ-2N-jn7"/>
+                                    <constraint firstAttribute="width" secondItem="Jlf-kB-4m1" secondAttribute="height" multiplier="1:1" id="YkH-0r-uQP"/>
                                     <constraint firstAttribute="height" constant="240" id="yf0-t8-uSV"/>
                                 </constraints>
                             </imageView>
@@ -119,13 +122,37 @@
                                 <rect key="frame" x="27" y="173" width="320" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="4n1-nT-AYY"/>
+                                    <constraint firstAttribute="width" secondItem="QpM-fA-iXi" secondAttribute="height" multiplier="1:1" id="Pae-ul-8tf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="320" id="Wtz-fj-crr"/>
                                     <constraint firstAttribute="width" constant="320" id="afG-Xc-rha"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="bgi-k9-8HS"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mG-cO-yff">
+                                <rect key="frame" x="117" y="80" width="140" height="58"/>
+                                <color key="backgroundColor" red="0.97259002920000004" green="0.30480452279583337" blue="0.18416846001523693" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9mG-cO-yff" secondAttribute="height" multiplier="70:29" id="6g8-ed-zAe"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="Q7F-hh-HHb"/>
+                                    <constraint firstAttribute="height" constant="58" id="ffw-tJ-0kB"/>
+                                    <constraint firstAttribute="width" constant="140" id="yF3-Pz-PIC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="31"/>
+                                <state key="normal" title="SCAN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="scan2:" destination="yrt-85-xae" eventType="touchUpInside" id="AZc-sr-kmy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="QpM-fA-iXi" firstAttribute="top" secondItem="9mG-cO-yff" secondAttribute="bottom" constant="35" id="412-wm-QIV"/>
+                            <constraint firstItem="9mG-cO-yff" firstAttribute="leading" secondItem="hQJ-yD-DAw" secondAttribute="leading" constant="117" id="7YX-S9-9DG"/>
                             <constraint firstItem="QpM-fA-iXi" firstAttribute="centerX" secondItem="zuW-Kl-t46" secondAttribute="centerX" id="EdL-wk-vBw"/>
+                            <constraint firstItem="9mG-cO-yff" firstAttribute="top" secondItem="hQJ-yD-DAw" secondAttribute="top" constant="60" id="h1v-EJ-HXv"/>
+                            <constraint firstItem="hQJ-yD-DAw" firstAttribute="trailing" secondItem="9mG-cO-yff" secondAttribute="trailing" constant="118" id="ngx-hZ-VZV"/>
                             <constraint firstItem="QpM-fA-iXi" firstAttribute="centerY" secondItem="zuW-Kl-t46" secondAttribute="centerY" id="vij-z3-NMO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hQJ-yD-DAw"/>
@@ -133,6 +160,7 @@
                     <tabBarItem key="tabBarItem" title="Scanner" image="Scanner" landscapeImage="Scanner" id="MSY-k0-7mg"/>
                     <connections>
                         <outlet property="crosshair" destination="QpM-fA-iXi" id="KGB-x1-Mjx"/>
+                        <outlet property="scan" destination="9mG-cO-yff" id="SAA-xF-29R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyl-Uk-4Ff" userLabel="First Responder" sceneMemberID="firstResponder"/>
