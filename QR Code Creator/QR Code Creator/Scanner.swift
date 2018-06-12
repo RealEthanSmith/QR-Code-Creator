@@ -43,7 +43,7 @@ class Scanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         
-        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr, AVMetadataObject.ObjectType.code128]
         
         video = AVCaptureVideoPreviewLayer(session: session)
         video.frame = view.layer.bounds
@@ -75,6 +75,9 @@ class Scanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
             if metadataObjects != nil && metadataObjects.count != 0 && scanningForCode == 1{
                 if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
+                    
+                    
+                    
                     if object.type == AVMetadataObject.ObjectType.qr {
                         let alert = UIAlertController(title: "Your code is:", message: object.stringValue, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
@@ -83,6 +86,20 @@ class Scanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                         }))
                         present(alert, animated: true, completion: nil)
                     }
+                    
+                    
+                    
+                    if object.type == AVMetadataObject.ObjectType.code128{
+                        let alert = UIAlertController(title: "Your code is:", message: object.stringValue, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
+                        alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
+                            UIPasteboard.general.string = object.stringValue
+                        }))
+                        present(alert, animated: true, completion: nil)
+                    }
+                    
+                    
+                    
                 }
             }
         }

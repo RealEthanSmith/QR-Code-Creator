@@ -22,6 +22,10 @@
 	<string>1</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Can we use the camera? (So we can scan codes)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>May we access your photo library to save codes?</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>May we access your photo library to save codes?</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class Generator: UIViewController {
+class Generator: UIViewController, MFMailComposeViewControllerDelegate {
     
     //MARK: Connect
     @IBOutlet weak var dataField: UITextField!
@@ -19,6 +20,19 @@ class Generator: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    //Hide keyboard when touch outside
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func convertTypes(cmage:CIImage) -> UIImage
+    {
+        let context:CIContext = CIContext.init(options: nil)
+        let cgImage:CGImage = context.createCGImage(cmage, from: cmage.extent)!
+        let image:UIImage = UIImage.init(cgImage: cgImage)
+        return image
     }
     
     //MARK: Button
@@ -39,16 +53,25 @@ class Generator: UIViewController {
             }
             filter.setValue(data, forKey: "inputMessage")
             let transform = CGAffineTransform(scaleX: 10, y: 10)
-            let image = UIImage(ciImage: filter.outputImage!.transformed(by: transform))
+            let fixedImage = UIImage(ciImage: filter.outputImage!.transformed(by: transform))
             
-            displayCodeView.image = image
+            displayCodeView.image = fixedImage
+            
+            //Setup for Saving
+            let saveImage = convertTypes(cmage: filter.outputImage!.transformed(by: transform))
+            var imageData = UIImagePNGRepresentation(saveImage)
+            
+            let compressedImage = UIImage(data: imageData!)
+            UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+                
             
             
+            //Alert for Saving
+            let alert = UIAlertController(title: "Code Generated", message:"Code has been saved to library", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
-    
-    
-    
     
     
     
