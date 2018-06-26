@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Ns-tS-hwD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Ns-tS-hwD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,7 +52,6 @@
                                 </constraints>
                                 <segments>
                                     <segment title="Barcode"/>
-                                    <segment title="UPCE"/>
                                     <segment title="QR-Code"/>
                                 </segments>
                             </segmentedControl>
@@ -72,7 +70,7 @@
                                 </connections>
                             </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jlf-kB-4m1">
-                                <rect key="frame" x="67" y="213.5" width="240" height="240"/>
+                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="95k-hp-YLm"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="LxG-Cf-jkF"/>
@@ -120,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cross hair" translatesAutoresizingMaskIntoConstraints="NO" id="QpM-fA-iXi">
-                                <rect key="frame" x="27" y="173" width="320" height="320"/>
+                                <rect key="frame" x="27.5" y="173" width="320" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="4n1-nT-AYY"/>
                                     <constraint firstAttribute="width" secondItem="QpM-fA-iXi" secondAttribute="height" multiplier="1:1" id="Pae-ul-8tf"/>

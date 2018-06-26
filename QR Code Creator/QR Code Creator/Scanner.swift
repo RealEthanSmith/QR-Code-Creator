@@ -100,17 +100,6 @@ class Scanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                     
                     
                     
-                    if object.type == AVMetadataObject.ObjectType.upce{
-                        let alert = UIAlertController(title: "Your code is:", message: object.stringValue, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
-                        alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
-                            UIPasteboard.general.string = object.stringValue
-                        }))
-                        present(alert, animated: true, completion: nil)
-                    }
-                    
-                    
-                    
                     
                 }
             }
