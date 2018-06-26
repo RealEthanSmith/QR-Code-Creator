@@ -48,7 +48,9 @@ class Generator: UIViewController, MFMailComposeViewControllerDelegate {
             
             if CodeSelector.selectedSegmentIndex == 0 {
                 filter = CIFilter(name: "CICode128BarcodeGenerator")
-            }else{
+            }else if CodeSelector.selectedSegmentIndex == 1{
+                filter = CIFilter(name: "CIUPCEBarcodeGenerator")
+            }else if CodeSelector.selectedSegmentIndex == 2{
                 filter = CIFilter(name: "CIQRCodeGenerator")
             }
             filter.setValue(data, forKey: "inputMessage")
