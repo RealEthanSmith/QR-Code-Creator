@@ -61,14 +61,14 @@ class Generator: UIViewController, MFMailComposeViewControllerDelegate {
             //Setup for Saving
             let saveImage = convertTypes(cmage: filter.outputImage!.transformed(by: transform))
             var imageData = UIImagePNGRepresentation(saveImage)
-            
+            //Saving...
             let compressedImage = UIImage(data: imageData!)
             UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
                 
             
             
             //Alert for Saving
-            let alert = UIAlertController(title: "Code Generated", message:"Code has been saved to library", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Code Generated", message:"Code has been saved to photo library", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }

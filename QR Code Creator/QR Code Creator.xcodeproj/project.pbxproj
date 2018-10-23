@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24E9150D217ED1DF0022A330 /* AvenueX-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 24E9150C217ED1DF0022A330 /* AvenueX-Regular.otf */; };
 		A02F87F420B4EE4C00F7605E /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F87F320B4EE4C00F7605E /* Scanner.swift */; };
 		A0E56AC420B4C861005C11B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E56AC320B4C861005C11B7 /* AppDelegate.swift */; };
 		A0E56AC620B4C861005C11B7 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E56AC520B4C861005C11B7 /* Generator.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24E9150C217ED1DF0022A330 /* AvenueX-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenueX-Regular.otf"; sourceTree = "<group>"; };
 		A02F87F320B4EE4C00F7605E /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		A0E56AC020B4C860005C11B7 /* QR Code Creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR Code Creator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E56AC320B4C861005C11B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24E91509217ED1C50022A330 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				24E9150C217ED1DF0022A330 /* AvenueX-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		A0E56AB720B4C860005C11B7 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 				A02F87F320B4EE4C00F7605E /* Scanner.swift */,
 				A0E56AC720B4C861005C11B7 /* Main.storyboard */,
 				A0E56ACA20B4C862005C11B7 /* Assets.xcassets */,
+				24E91509217ED1C50022A330 /* Fonts */,
 				A0E56ACC20B4C862005C11B7 /* LaunchScreen.storyboard */,
 				A0E56ACF20B4C862005C11B7 /* Info.plist */,
 			);
@@ -233,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E56ACE20B4C862005C11B7 /* LaunchScreen.storyboard in Resources */,
+				24E9150D217ED1DF0022A330 /* AvenueX-Regular.otf in Resources */,
 				A0E56ACB20B4C862005C11B7 /* Assets.xcassets in Resources */,
 				A0E56AC920B4C861005C11B7 /* Main.storyboard in Resources */,
 			);
@@ -444,7 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onpointech.QR-Code-Creator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -462,7 +474,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onpointech.QR-Code-Creator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
