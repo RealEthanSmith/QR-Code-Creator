@@ -16,6 +16,7 @@ class Generator: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var CodeSelector: UISegmentedControl!
     @IBOutlet weak var displayCodeView: UIImageView!
     var filter:CIFilter!
+    @IBOutlet weak var saveToPhotos: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,32 @@ class Generator: UIViewController, MFMailComposeViewControllerDelegate {
         if var text = dataField.text {
             
             if text == "" {
-                text = "This is an empty code"
+                text = "Hmmm... This code is has no data"
+            }
+            
+            let data = text.data(using: .ascii, allowLossyConversion: false)
+            
+            if CodeSelector.selectedSegmentIndex == 0 {
+                filter = CIFilter(name: "CICode128BarcodeGenerator")
+            }else{
+                filter = CIFilter(name: "CIQRCodeGenerator")
+            }
+            
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 10, y: 10)
+            let fixedImage = UIImage(ciImage: filter.outputImage!.transformed(by: transform))
+            
+            displayCodeView.image = fixedImage
+        }
+    }
+    
+    
+    //Basically Repeats generate, but then saves it...
+    @IBAction func savePressed(_ sender: Any) {
+        if var text = dataField.text {
+            
+            if text == "" {
+                text = "Hmmm... This code is has no data"
             }
             
             let data = text.data(using: .ascii, allowLossyConversion: false)
@@ -64,17 +90,14 @@ class Generator: UIViewController, MFMailComposeViewControllerDelegate {
             //Saving...
             let compressedImage = UIImage(data: imageData!)
             UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
-                
             
             
             //Alert for Saving
             let alert = UIAlertController(title: "Code Generated", message:"Code has been saved to photo library", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
-    
     
     
     

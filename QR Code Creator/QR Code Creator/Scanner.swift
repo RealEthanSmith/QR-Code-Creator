@@ -13,14 +13,12 @@ class Scanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var crosshair: UIImageView!
     @IBOutlet weak var scan: UIButton!
-    @IBOutlet weak var stopScan: UIButton!
     var video = AVCaptureVideoPreviewLayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        scan.backgroundColor = UIColor.red
-        stopScan.backgroundColor = UIColor.white
+        scan.setImage(#imageLiteral(resourceName: "Scan"), for: .normal)
         
         //Creating session
         let session = AVCaptureSession()
@@ -51,7 +49,6 @@ class Scanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         self.view.bringSubview(toFront: crosshair)
         self.view.bringSubview(toFront: scan)
-        self.view.bringSubview(toFront: stopScan)
         
         session.startRunning()
         
@@ -60,13 +57,13 @@ class Scanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var scanningForCode = 0
     
     @IBAction func userscans(_ sender: UIButton) {
-        scanningForCode = 1
-        stopScan.backgroundColor = UIColor.red
-    }
-    
-    @IBAction func userstops(_ sender: UIButton) {
-        scanningForCode = 0
-        stopScan.backgroundColor = UIColor.white
+        if scan.imageView?.image == #imageLiteral(resourceName: "Scan"){
+            scan.setImage(#imageLiteral(resourceName: "Scan_STOP"), for: .normal)
+            scanningForCode = 1
+        } else if scan.imageView?.image == #imageLiteral(resourceName: "Scan_STOP"){
+            scan.setImage(#imageLiteral(resourceName: "Scan"), for: .normal)
+            scanningForCode = 0
+        }
     }
     
     
