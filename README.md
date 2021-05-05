@@ -1,1 +1,1 @@
-# QR-Code-Creator
+# Tanner the Scanner
